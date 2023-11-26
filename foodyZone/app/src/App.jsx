@@ -47,7 +47,7 @@ const App = () => {
   const filterFood = (type) => {
     if (type === "all") {
       setFilterData(data);
-      setSelectedBtn("all");
+      setSelectedBtn("all");           
       return;
     }
 
