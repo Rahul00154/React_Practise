@@ -1,0 +1,14 @@
+#root {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  height: 500px;
+  width: 100%;
+}
+
+.question {
+  display: inline;
+  border-style: outset;
+}
