@@ -1,14 +1,33 @@
 import { useState } from "react";
-import Data from "./Data/data";
+// import Data from "./Data/data";
 import "./App.css";
+
+const Data = [
+  {
+    id: 1,
+    question: "How many bones does a cat have?",
+    answer: "A cat has 230 bones - 6 more than a human",
+  },
+  {
+    id: 2,
+    question: "How much do cats sleep?",
+    answer: "The average cat sleeps 12-16 hours per day",
+  },
+  {
+    id: 3,
+    question: "How long do cats live",
+    answer:
+      "Outdoor cats live 5 years on average. Indoor\ncats live 15 years on average.",
+  },
+];
 
 function App() {
   // const [count, setCount] = useState(0)
-  const [isOpen, setIsOpen] = useState(open);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className="container">
-      {Data.map((data) => {
+      {Data.map((data, index) => {
         return (
           <div key={data.id} className="content-wrapper">
             <div>
@@ -23,11 +42,11 @@ function App() {
                 ></path>
               </svg>
 
-              <h1 className="question" onClick={() => setIsOpen(!isOpen)}>
+              <h1 className="question" onClick={() => setIsOpen(index)}>
                 {data.question}
               </h1>
             </div>
-            {isOpen && <p className="answer">{data.answer}</p>}
+            {isOpen === index && <p className="answer">{data.answer}</p>}
           </div>
         );
       })}
